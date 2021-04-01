@@ -40,8 +40,9 @@ RUN set -ex; \
 	ibus-gtk3 \
 	ibus-qt4 \
 	rclone \
-	jellyfin \
 	qbittorrent \
+	apt-transport-https \
+	plexmediaserver \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
