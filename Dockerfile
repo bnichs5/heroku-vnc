@@ -41,7 +41,6 @@ RUN set -ex; \
 	ibus-qt4 \
 	rclone \
 	plexmediaserver \
-	jellyfin \
 	qbittorrent \
     && apt-get autoclean \
     && apt-get autoremove \
