@@ -42,7 +42,6 @@ RUN set -ex; \
 	rclone \
 	jellyfin \
 	qbittorrent \
-    && apt-transport-https
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
