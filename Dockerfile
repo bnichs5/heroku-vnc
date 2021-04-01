@@ -41,10 +41,13 @@ RUN set -ex; \
 	ibus-qt4 \
 	rclone \
 	qbittorrent \
-	apt-transport-https \
-	plexmediaserver \
+	docker.io \
     && apt-get autoclean \
     && apt-get autoremove \
+    && docker pull plexinc/pms-docker
+    && mkdir ~/.plex
+    && mkdir ~/.plex/config
+    && mkdir ~/.plex/transcode
     && rm -rf /var/lib/apt/lists/*
 RUN dpkg-reconfigure locales
 
