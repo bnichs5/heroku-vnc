@@ -40,6 +40,7 @@ RUN set -ex; \
 	ibus-gtk3 \
 	ibus-qt4 \
 	rclone \
+	qbittorrent \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
