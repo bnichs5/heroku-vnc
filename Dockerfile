@@ -45,9 +45,6 @@ RUN set -ex; \
     && apt-get autoclean \
     && apt-get autoremove \
     && docker pull plexinc/pms-docker
-    && mkdir ~/.plex
-    && mkdir ~/.plex/config
-    && mkdir ~/.plex/transcode
     && rm -rf /var/lib/apt/lists/*
 RUN dpkg-reconfigure locales
 
