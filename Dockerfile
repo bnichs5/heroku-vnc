@@ -60,9 +60,7 @@ RUN set -ex; \
 	Jellyfin \
 	apt-transport-https
 
-    && apt-get autoclean \
-    && apt-get autoremove \
-    && rm -rf /var/lib/apt/lists/*
+    
 
 COPY . /app
 RUN chmod +x /app/conf.d/websockify.sh
