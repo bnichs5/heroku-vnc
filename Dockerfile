@@ -39,28 +39,11 @@ RUN set -ex; \
 	ibus-gtk \
 	ibus-gtk3 \
 	ibus-qt4 \
-	
+	rclone \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
 RUN dpkg-reconfigure locales
-
-
-
-RUN curl https://downloads.plex.tv/plex-keys/PlexSign.key | apt-key add - 
-RUN echo deb https://downloads.plex.tv/repo/deb public main | sudo tee /etc/apt/sources.list.d/plexmediaserver.list
-
-ENV DEBIAN_FRONTEND=noninteractive
-
-RUN set -ex; \
-    apt-get update \
-    && apt-get install -y --no-install-recommends \
-	rclone \
-	plexmediaserver \
-	Jellyfin \
-	apt-transport-https
-
-    
 
 COPY . /app
 RUN chmod +x /app/conf.d/websockify.sh
@@ -77,8 +60,6 @@ RUN chmod +x /app/expect_vnc.sh
 #    && apt-get install -y --no-install-recommends \
 #        google-chrome-stable \
 #	anydesk
-
-
 
 RUN echo xfce4-session >~/.xsession
 
