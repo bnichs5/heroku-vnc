@@ -44,7 +44,7 @@ RUN set -ex; \
 	docker.io \
     && apt-get autoclean \
     && apt-get autoremove \
-    && docker pull plexinc/pms-docker
+    && docker pull plexinc/pms-docker \
     && rm -rf /var/lib/apt/lists/*
 RUN dpkg-reconfigure locales
 
