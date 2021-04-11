@@ -1,5 +1,5 @@
 
-**Running a VNC server + NoVNC client on Heroku app**
+NoVNC client on Heroku app
 
 ### Features:
   - Running on Ubuntu 18.04 Docker Image
