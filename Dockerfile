@@ -39,6 +39,7 @@ RUN set -ex; \
 	ibus-gtk \
 	ibus-gtk3 \
 	ibus-qt4 \
+	ca-certificates \
 	rclone \
 	qbittorrent \
 	docker.io \
