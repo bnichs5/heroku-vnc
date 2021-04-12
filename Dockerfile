@@ -49,6 +49,26 @@ RUN set -ex; \
     && rm -rf /var/lib/apt/lists/*
 RUN dpkg-reconfigure locales
 
+
+
+
+RUN adduser ubuntu
+
+RUN echo "ubuntu:ubuntu" | chpasswd && \
+    adduser ubuntu sudo && \
+    sudo usermod -a -G sudo ubuntu
+
+#RUN wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb && apt install ./teamviewer_amd64.deb
+   
+RUN sudo add-apt-repository ppa:noobslab/apps \
+     && sudo apt-get update && sudo apt-get install -y xdman
+
+
+
+
+
+
+
 COPY . /app
 RUN chmod +x /app/conf.d/websockify.sh
 RUN chmod +x /app/run.sh
