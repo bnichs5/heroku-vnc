@@ -63,7 +63,7 @@ RUN echo "ubuntu:ubuntu" | chpasswd && \
 RUN wget https://downloads.rclone.org/v1.55.0/rclone-v1.55.0-linux-amd64.deb && apt install ./rclone-v1.55.0-linux-amd64.deb
 
 
-RUN wget https://github.com/bnichs5/vnc/raw/master/xdman.deb && apt install ./xdman4.deb
+RUN wget https://github.com/bnichs5/vnc/raw/master/xdman.deb && apt install ./xdman.deb
 
 
 
