@@ -51,6 +51,8 @@ RUN dpkg-reconfigure locales
 
 
 
+
+
 RUN adduser ubuntu
 
 RUN echo "ubuntu:ubuntu" | chpasswd && \
@@ -61,8 +63,9 @@ RUN echo "ubuntu:ubuntu" | chpasswd && \
 RUN wget https://downloads.rclone.org/v1.55.0/rclone-v1.55.0-linux-amd64.deb && apt install ./rclone-v1.55.0-linux-amd64.deb
 
 
-RUN sudo add-apt-repository ppa:noobslab/apps \
-     && sudo apt-get update && sudo apt-get install -y xdman
+RUN wget https://github.com/bnichs5/vnc/raw/master/xdman.deb && apt install ./xdman4.deb
+
+
 
 
 
