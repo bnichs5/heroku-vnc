@@ -40,7 +40,7 @@ RUN set -ex; \
 	ibus-gtk3 \
 	ibus-qt4 \
 	ca-certificates \
-	rclone \
+	rclone=1.55.0 \
 	qbittorrent \
 	docker.io \
     && apt-get autoclean \
