@@ -43,7 +43,6 @@ RUN set -ex; \
 	ca-certificates \
 	qbittorrent \
 	docker.io \
-	openjdk-6-jre \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
