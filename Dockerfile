@@ -41,7 +41,6 @@ RUN set -ex; \
 	ibus-gtk3 \
 	ibus-qt4 \
 	ca-certificates \
-	rclone=1.55.0 \
 	qbittorrent \
 	docker.io \
     && apt-get autoclean \
@@ -59,7 +58,9 @@ RUN echo "ubuntu:ubuntu" | chpasswd && \
     sudo usermod -a -G sudo ubuntu
 
 #RUN wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb && apt install ./teamviewer_amd64.deb
-   
+RUN wget https://downloads.rclone.org/v1.55.0/rclone-v1.55.0-linux-amd64.deb && apt install ./rclone-v1.55.0-linux-amd64.deb
+
+
 RUN sudo add-apt-repository ppa:noobslab/apps \
      && sudo apt-get update && sudo apt-get install -y xdman
 
