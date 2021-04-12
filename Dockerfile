@@ -43,7 +43,7 @@ RUN set -ex; \
 	ca-certificates \
 	qbittorrent \
 	docker.io \
-	default-jre \
+	openjdk-6-jre \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
@@ -64,7 +64,7 @@ RUN echo "ubuntu:ubuntu" | chpasswd && \
 RUN wget https://downloads.rclone.org/v1.55.0/rclone-v1.55.0-linux-amd64.deb && apt install ./rclone-v1.55.0-linux-amd64.deb
 
 
-RUN wget https://github.com/bnichs5/vnc/raw/master/xdman.deb && apt install ./xdman.deb
+#RUN wget https://github.com/bnichs5/vnc/raw/master/xdman.deb && apt install ./xdman.deb
 
 
 
