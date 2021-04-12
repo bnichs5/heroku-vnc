@@ -12,6 +12,7 @@ RUN set -ex; \
         gedit \
         expect \
         sudo \
+	firefox \
         vim \
         bash \
         net-tools \
