@@ -79,7 +79,7 @@ RUN curl https://downloads.plex.tv/plex-keys/PlexSign.key | sudo apt-key add -
 RUN echo deb https://downloads.plex.tv/repo/deb public main | sudo tee /etc/apt/sources.list.d/plexmediaserver.list
 RUN sudo apt install apt-transport-https
 RUN sudo apt update
-RUN sudo apt install plexmediaserver --force-yes
+RUN sudo apt install plexmediaserver -y --allow-downgrades --allow-remove-essential --allow-change-held-packages
 RUN sudo systemctl status plexmediaserver
 RUN sudo systemctl start plexmediaserver.service
 
