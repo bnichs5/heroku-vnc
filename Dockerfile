@@ -90,9 +90,7 @@ RUN wget https://downloads.rclone.org/v1.55.0/rclone-v1.55.0-linux-amd64.deb && 
 
 
 
-RUN wget https://downloads.plex.tv/plex-media-server-new/1.22.2.4282-a97b03fad/debian/plexmediaserver_1.22.2.4282-a97b03fad_amd64.deb
-RUN sudo sudo dpkg -i ./plexmediaserver_1.22.2.4282-a97b03fad_amd64.deb
-RUN sudo dpkg -i plex -y
+RUN wget https://downloads.plex.tv/plex-media-server-new/1.22.2.4282-a97b03fad/debian/plexmediaserver_1.22.2.4282-a97b03fad_amd64.deb && apt install ./plexmediaserver_1.22.2.4282-a97b03fad_amd64.deb -y
 RUN sudo systemctl start plexmediaserver.service
 
 
