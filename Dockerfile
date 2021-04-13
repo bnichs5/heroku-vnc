@@ -75,13 +75,13 @@ RUN wget https://downloads.rclone.org/v1.55.0/rclone-v1.55.0-linux-amd64.deb && 
 #RUN sudo service jellyfin start
 
 
-RUN curl https://downloads.plex.tv/plex-keys/PlexSign.key | sudo apt-key add -
-RUN echo deb https://downloads.plex.tv/repo/deb public main | sudo tee /etc/apt/sources.list.d/plexmediaserver.list
-RUN sudo apt install apt-transport-https
-RUN sudo apt update
-RUN sudo apt -f install plexmediaserver -y
-RUN sudo systemctl status plexmediaserver
-RUN sudo systemctl start plexmediaserver.service
+#RUN curl https://downloads.plex.tv/plex-keys/PlexSign.key | sudo apt-key add -
+#RUN echo deb https://downloads.plex.tv/repo/deb public main | sudo tee /etc/apt/sources.list.d/plexmediaserver.list
+#RUN sudo apt install apt-transport-https
+#RUN sudo apt update
+#RUN sudo apt -f install plexmediaserver -y
+#RUN sudo systemctl status plexmediaserver
+#RUN sudo systemctl start plexmediaserver.service
 
 RUN sudo mkdir -p /opt/plexmedia/
 RUN sudo chown -R plex: /opt/plexmedia
@@ -93,7 +93,7 @@ RUN sudo chown -R plex: /opt/plexmedia
 RUN wget https://downloads.plex.tv/plex-media-server-new/1.22.2.4282-a97b03fad/debian/plexmediaserver_1.22.2.4282-a97b03fad_amd64.deb
 RUN sudo sudo dpkg -i ./plexmediaserver_1.22.2.4282-a97b03fad_amd64.deb
 RUN sudo dpkg -i plex -y
-
+RUN sudo systemctl start plexmediaserver.service
 
 
 
