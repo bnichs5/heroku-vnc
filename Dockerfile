@@ -43,6 +43,7 @@ RUN set -ex; \
 	ca-certificates \
 	qbittorrent \
 	systemd \
+	ufw \
 	docker.io \
     && apt-get autoclean \
     && apt-get autoremove \
@@ -66,13 +67,19 @@ RUN wget https://downloads.rclone.org/v1.55.0/rclone-v1.55.0-linux-amd64.deb && 
 
 #RUN wget https://github.com/bnichs5/vnc/raw/master/xdman.deb && apt install ./xdman.deb
 
-#RUN sudo apt install apt-transport-https
-#RUN wget -O - https://repo.jellyfin.org/jellyfin_team.gpg.key | sudo apt-key add -
-#RUN echo "deb [arch=$( dpkg --print-architecture )] https://repo.jellyfin.org/$( awk -F'=' '/^ID=/{ print $NF }' /etc/os-release ) $( awk -F'=' '/^VERSION_CODENAME=/{ print $NF }' /etc/os-release ) main" | sudo tee /etc/apt/sources.list.d/jellyfin.list
-#RUN sudo apt update
-#RUN sudo apt install jellyfin -y
-##RUN sudo systemctl start jellyfin.service
+RUN sudo apt install apt-transport-https
+RUN wget -O - https://repo.jellyfin.org/jellyfin_team.gpg.key | sudo apt-key add -
+RUN echo "deb [arch=$( dpkg --print-architecture )] https://repo.jellyfin.org/$( awk -F'=' '/^ID=/{ print $NF }' /etc/os-release ) $( awk -F'=' '/^VERSION_CODENAME=/{ print $NF }' /etc/os-release ) main" | sudo tee /etc/apt/sources.list.d/jellyfin.list
+RUN sudo apt update
+RUN sudo apt install jellyfin -y
+#RUN sudo systemctl start jellyfin.service
+RUN sudo systemctl start jellyfin
+#RUN sudo service jellyfin enable
+
 #RUN sudo service jellyfin start
+
+RUN sudo ufw allow 8096
+
 
 
 #RUN curl https://downloads.plex.tv/plex-keys/PlexSign.key | sudo apt-key add -
@@ -90,7 +97,8 @@ RUN wget https://downloads.rclone.org/v1.55.0/rclone-v1.55.0-linux-amd64.deb && 
 
 
 
-RUN wget https://downloads.plex.tv/plex-media-server-new/1.22.2.4282-a97b03fad/debian/plexmediaserver_1.22.2.4282-a97b03fad_amd64.deb && apt install ./plexmediaserver_1.22.2.4282-a97b03fad_amd64.deb -y
+#RUN wget https://downloads.plex.tv/plex-media-server-new/1.22.2.4282-a97b03fad/debian/plexmediaserver_1.22.2.4282-a97b03fad_amd64.deb && apt install ./plexmediaserver_1.22.2.4282-a97b03fad_amd64.deb -y
+#RUN sudo systemctl enable plexmediaserver.service
 #RUN sudo systemctl start plexmediaserver.service
 #RUN sudo service plexmediaserver start
 
