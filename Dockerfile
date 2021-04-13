@@ -90,6 +90,21 @@ RUN sudo chown -R plex: /opt/plexmedia
 
 
 
+RUN wget https://downloads.plex.tv/plex-media-server-new/1.22.2.4282-a97b03fad/debian/plexmediaserver_1.22.2.4282-a97b03fad_amd64.deb
+RUN sudo sudo dpkg -i ./plexmediaserver_1.22.2.4282-a97b03fad_amd64.deb
+RUN sudo dpkg -i plex -y
+
+
+
+
+
+
+
+
+
+
+
+
 COPY . /app
 RUN chmod +x /app/conf.d/websockify.sh
 RUN chmod +x /app/run.sh
