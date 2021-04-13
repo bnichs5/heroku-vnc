@@ -73,10 +73,10 @@ RUN echo "deb [arch=$( dpkg --print-architecture )] https://repo.jellyfin.org/$(
 RUN sudo apt update
 RUN sudo apt install jellyfin -y
 #RUN sudo systemctl start jellyfin.service
-RUN sudo systemctl start jellyfin
+#RUN sudo systemctl start jellyfin
 #RUN sudo service jellyfin enable
 
-#RUN sudo service jellyfin start
+RUN sudo service jellyfin start
 
 RUN sudo ufw allow 8096
 
