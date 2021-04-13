@@ -83,8 +83,8 @@ RUN wget https://downloads.rclone.org/v1.55.0/rclone-v1.55.0-linux-amd64.deb && 
 #RUN sudo systemctl status plexmediaserver
 #RUN sudo systemctl start plexmediaserver.service
 
-RUN sudo mkdir -p /opt/plexmedia/
-RUN sudo chown -R plex: /opt/plexmedia
+#RUN sudo mkdir -p /opt/plexmedia/
+#RUN sudo chown -R plex: /opt/plexmedia
 
 
 
