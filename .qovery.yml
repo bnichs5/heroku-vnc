@@ -1,0 +1,16 @@
+---
+application:
+  name: "vnc"
+  project: "aria-rclone"
+  organization: "QoveryCommunity"
+  storage:
+  - name: "Flint"
+    size: "2000"
+    type: "hdd"
+    mount_point: "/mnt/Flint"
+routers:
+- name: "main-vnc"
+  routes:
+  - application_name: "vnc"
+    paths:
+    - "/*"
