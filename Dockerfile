@@ -64,7 +64,7 @@ RUN echo "ubuntu:ubuntu" | chpasswd && \
 #RUN wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb && apt install ./teamviewer_amd64.deb
 RUN wget https://downloads.rclone.org/v1.55.0/rclone-v1.55.0-linux-amd64.deb && apt install ./rclone-v1.55.0-linux-amd64.deb
 
-RUN wget https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2020.03.04_amd64.deb && apt install ./dropbox_2020.03.04_amd64.deb
+#RUN wget https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2020.03.04_amd64.deb && apt install ./dropbox_2020.03.04_amd64.deb
 
 
 #RUN wget https://github.com/bnichs5/vnc/raw/master/xdman.deb && apt install ./xdman.deb
